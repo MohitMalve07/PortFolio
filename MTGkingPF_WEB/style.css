@@ -1,0 +1,580 @@
+/* Smooth scrolling for in-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero section styling */
+.hero-section {
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+  padding-top: 96px; /* offset for fixed navbar on very small screens */
+}
+
+/* Skill items and logos - UNIFORM STYLING */
+.skill-item {
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.skill-item:hover::before {
+  left: 100%;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(13, 110, 253, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Uniform icon sizing - all icons now 48px x 48px */
+.skill-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-icon {
+  font-size: 48px; /* Convert to px for consistency */
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover effects for both icon types */
+.skill-item:hover .skill-logo {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 12px rgba(13, 110, 253, 0.3));
+}
+
+.skill-item:hover .skill-icon {
+  color: #0d6efd;
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 12px rgba(13, 110, 253, 0.3));
+  text-shadow: 0 0 10px rgba(13, 110, 253, 0.5);
+}
+
+/* Skill label styling */
+.skill-item .small {
+  font-weight: 500;
+  color: #495057;
+  transition: color 0.3s ease;
+}
+
+.skill-item:hover .small {
+  color: #0d6efd;
+}
+
+/* Responsive adjustments for skill icons */
+@media (max-width: 768px) {
+  .skill-item {
+    min-height: 100px;
+    padding: 1rem 0.75rem;
+  }
+  
+  .skill-logo,
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skill-item .small {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .skill-item {
+    min-height: 90px;
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .skill-logo,
+  .skill-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 36px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skill-item .small {
+    font-size: 0.7rem;
+  }
+}
+
+/* Footer */
+footer {
+  background: #ffffff;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Card image ratio helper (optional if you want fixed ratios) */
+.card-img-top {
+  object-fit: cover;
+}
+
+/* ===== DECORATIVE ELEMENTS ===== */
+
+/* Enhanced floating tech icons */
+.floating-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  color: rgba(13, 110, 253, 0.3);
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.floating-icon:hover {
+  color: rgba(13, 110, 253, 0.8);
+  transform: scale(1.2);
+  text-shadow: 0 0 10px rgba(13, 110, 253, 0.5);
+}
+
+/* Position floating icons with increased density and varied positioning */
+.floating-icon:nth-child(1) { top: 8%; left: 3%; animation-delay: 0s; }
+.floating-icon:nth-child(2) { top: 15%; right: 8%; animation-delay: 1s; }
+.floating-icon:nth-child(3) { top: 25%; left: 6%; animation-delay: 2s; }
+.floating-icon:nth-child(4) { top: 35%; right: 12%; animation-delay: 3s; }
+.floating-icon:nth-child(5) { top: 45%; left: 18%; animation-delay: 4s; }
+.floating-icon:nth-child(6) { top: 55%; right: 20%; animation-delay: 5s; }
+.floating-icon:nth-child(7) { top: 65%; left: 10%; animation-delay: 6s; }
+.floating-icon:nth-child(8) { top: 75%; right: 15%; animation-delay: 7s; }
+.floating-icon:nth-child(9) { top: 85%; left: 25%; animation-delay: 8s; }
+.floating-icon:nth-child(10) { top: 92%; right: 5%; animation-delay: 9s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-20px) rotate(5deg); opacity: 0.7; }
+}
+
+/* Enhanced circuit lines background */
+.circuit-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.circuit-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, transparent 49%, rgba(13, 110, 253, 0.1) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(13, 110, 253, 0.1) 50%, transparent 51%),
+    radial-gradient(circle at 20% 80%, rgba(13, 110, 253, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(13, 110, 253, 0.05) 0%, transparent 50%);
+  background-size: 60px 60px, 60px 60px, 200px 200px, 200px 200px;
+  opacity: 0.4;
+  animation: circuitMove 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes circuitMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
+
+/* Pixel art styled decorative elements */
+.pixel-decor {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(13, 110, 253, 0.6);
+  border-radius: 2px;
+  animation: pixelGlow 3s ease-in-out infinite alternate;
+}
+
+.pixel-decor:nth-child(1) { top: 15%; left: 12%; width: 8px; height: 8px; animation-delay: 0s; }
+.pixel-decor:nth-child(2) { top: 25%; right: 18%; width: 6px; height: 6px; animation-delay: 0.5s; }
+.pixel-decor:nth-child(3) { top: 65%; left: 15%; width: 10px; height: 10px; animation-delay: 1s; }
+.pixel-decor:nth-child(4) { top: 75%; right: 22%; width: 7px; height: 7px; animation-delay: 1.5s; }
+.pixel-decor:nth-child(5) { top: 35%; left: 25%; width: 9px; height: 9px; animation-delay: 2s; }
+.pixel-decor:nth-child(6) { top: 45%; right: 30%; width: 5px; height: 5px; animation-delay: 2.5s; }
+.pixel-decor:nth-child(7) { top: 55%; left: 35%; width: 8px; height: 8px; animation-delay: 3s; }
+.pixel-decor:nth-child(8) { top: 85%; right: 35%; width: 6px; height: 6px; animation-delay: 3.5s; }
+.pixel-decor:nth-child(9) { top: 95%; left: 40%; width: 10px; height: 10px; animation-delay: 4s; }
+.pixel-decor:nth-child(10) { top: 5%; right: 45%; width: 7px; height: 7px; animation-delay: 4.5s; }
+
+@keyframes pixelGlow {
+  0% { box-shadow: 0 0 5px rgba(13, 110, 253, 0.3); }
+  100% { box-shadow: 0 0 15px rgba(13, 110, 253, 0.8); }
+}
+
+/* ===== SPECIFIC PIXEL ART DECORATIONS ===== */
+/* Pixel art game controller */
+.pixel-controller {
+  position: absolute; width: 16px; height: 12px; background: rgba(13, 110, 253, 0.7);
+  border-radius: 2px; animation: controllerGlow 4s ease-in-out infinite alternate;
+  clip-path: polygon(0 25%, 25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%);
+}
+.pixel-controller:nth-child(1) { top: 12%; left: 8%; animation-delay: 0s; }
+.pixel-controller:nth-child(2) { top: 22%; right: 12%; animation-delay: 1s; }
+.pixel-controller:nth-child(3) { top: 32%; left: 15%; animation-delay: 2s; }
+.pixel-controller:nth-child(4) { top: 42%; right: 18%; animation-delay: 3s; }
+.pixel-controller:nth-child(5) { top: 52%; left: 22%; animation-delay: 4s; }
+.pixel-controller:nth-child(6) { top: 62%; right: 25%; animation-delay: 5s; }
+.pixel-controller:nth-child(7) { top: 72%; left: 28%; animation-delay: 6s; }
+.pixel-controller:nth-child(8) { top: 82%; right: 30%; animation-delay: 7s; }
+
+/* Glowing code brackets */
+.code-bracket {
+  position: absolute; width: 8px; height: 16px; background: rgba(13, 110, 253, 0.6);
+  border-radius: 1px; animation: bracketPulse 3s ease-in-out infinite;
+}
+.code-bracket:nth-child(1) { top: 18%; left: 10%; animation-delay: 0s; }
+.code-bracket:nth-child(2) { top: 28%; right: 14%; animation-delay: 0.5s; }
+.code-bracket:nth-child(3) { top: 38%; left: 18%; animation-delay: 1s; }
+.code-bracket:nth-child(4) { top: 48%; right: 22%; animation-delay: 1.5s; }
+.code-bracket:nth-child(5) { top: 58%; left: 26%; animation-delay: 2s; }
+.code-bracket:nth-child(6) { top: 68%; right: 28%; animation-delay: 2.5s; }
+.code-bracket:nth-child(7) { top: 78%; left: 32%; animation-delay: 3s; }
+.code-bracket:nth-child(8) { top: 88%; right: 35%; animation-delay: 3.5s; }
+
+/* Floating binary digits */
+.binary-digit {
+  position: absolute; width: 6px; height: 6px; background: rgba(13, 110, 253, 0.5);
+  border-radius: 50%; animation: binaryFloat 5s ease-in-out infinite;
+  font-size: 4px; color: white; display: flex; align-items: center; justify-content: center;
+}
+.binary-digit:nth-child(1) { top: 14%; left: 12%; animation-delay: 0s; }
+.binary-digit:nth-child(2) { top: 24%; right: 16%; animation-delay: 1s; }
+.binary-digit:nth-child(3) { top: 34%; left: 20%; animation-delay: 2s; }
+.binary-digit:nth-child(4) { top: 44%; right: 24%; animation-delay: 3s; }
+.binary-digit:nth-child(5) { top: 54%; left: 28%; animation-delay: 4s; }
+.binary-digit:nth-child(6) { top: 64%; right: 32%; animation-delay: 5s; }
+.binary-digit:nth-child(7) { top: 74%; left: 36%; animation-delay: 6s; }
+.binary-digit:nth-child(8) { top: 84%; right: 38%; animation-delay: 7s; }
+
+/* Rotating gears */
+.rotating-gear {
+  position: absolute; width: 12px; height: 12px; background: rgba(13, 110, 253, 0.6);
+  border-radius: 50%; animation: gearRotate 8s linear infinite;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.rotating-gear:nth-child(1) { top: 16%; left: 14%; animation-delay: 0s; }
+.rotating-gear:nth-child(2) { top: 26%; right: 18%; animation-delay: 2s; }
+.rotating-gear:nth-child(3) { top: 36%; left: 22%; animation-delay: 4s; }
+.rotating-gear:nth-child(4) { top: 46%; right: 26%; animation-delay: 6s; }
+.rotating-gear:nth-child(5) { top: 56%; left: 30%; animation-delay: 8s; }
+.rotating-gear:nth-child(6) { top: 66%; right: 34%; animation-delay: 10s; }
+.rotating-gear:nth-child(7) { top: 76%; left: 38%; animation-delay: 12s; }
+.rotating-gear:nth-child(8) { top: 86%; right: 42%; animation-delay: 14s; }
+
+/* Mini joysticks */
+.mini-joystick {
+  position: absolute; width: 10px; height: 10px; background: rgba(13, 110, 253, 0.7);
+  border-radius: 50%; animation: joystickMove 6s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
+}
+.mini-joystick:nth-child(1) { top: 20%; left: 16%; animation-delay: 0s; }
+.mini-joystick:nth-child(2) { top: 30%; right: 20%; animation-delay: 1s; }
+.mini-joystick:nth-child(3) { top: 40%; left: 24%; animation-delay: 2s; }
+.mini-joystick:nth-child(4) { top: 50%; right: 28%; animation-delay: 3s; }
+.mini-joystick:nth-child(5) { top: 60%; left: 32%; animation-delay: 4s; }
+.mini-joystick:nth-child(6) { top: 70%; right: 36%; animation-delay: 5s; }
+.mini-joystick:nth-child(7) { top: 80%; left: 40%; animation-delay: 6s; }
+.mini-joystick:nth-child(8) { top: 90%; right: 44%; animation-delay: 7s; }
+
+/* Health bars */
+.health-bar {
+  position: absolute; width: 20px; height: 4px; background: rgba(13, 110, 253, 0.6);
+  border-radius: 2px; animation: healthPulse 4s ease-in-out infinite;
+  overflow: hidden;
+}
+.health-bar::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(90deg, rgba(13, 110, 253, 0.8), rgba(13, 110, 253, 0.4));
+  animation: healthFlow 3s linear infinite;
+}
+.health-bar:nth-child(1) { top: 13%; left: 18%; animation-delay: 0s; }
+.health-bar:nth-child(2) { top: 23%; right: 22%; animation-delay: 0.5s; }
+.health-bar:nth-child(3) { top: 33%; left: 26%; animation-delay: 1s; }
+.health-bar:nth-child(4) { top: 43%; right: 30%; animation-delay: 1.5s; }
+.health-bar:nth-child(5) { top: 53%; left: 34%; animation-delay: 2s; }
+.health-bar:nth-child(6) { top: 63%; right: 38%; animation-delay: 2.5s; }
+.health-bar:nth-child(7) { top: 73%; left: 42%; animation-delay: 3s; }
+.health-bar:nth-child(8) { top: 83%; right: 46%; animation-delay: 3.5s; }
+
+/* Shader effects */
+.shader-effect {
+  position: absolute; width: 14px; height: 14px; background: rgba(13, 110, 253, 0.5);
+  border-radius: 50%; animation: shaderGlow 5s ease-in-out infinite;
+  filter: blur(1px);
+}
+.shader-effect:nth-child(1) { top: 17%; left: 20%; animation-delay: 0s; }
+.shader-effect:nth-child(2) { top: 27%; right: 24%; animation-delay: 1s; }
+.shader-effect:nth-child(3) { top: 37%; left: 28%; animation-delay: 2s; }
+.shader-effect:nth-child(4) { top: 47%; right: 32%; animation-delay: 3s; }
+.shader-effect:nth-child(5) { top: 57%; left: 36%; animation-delay: 4s; }
+.shader-effect:nth-child(6) { top: 67%; right: 40%; animation-delay: 5s; }
+.shader-effect:nth-child(7) { top: 77%; left: 44%; animation-delay: 6s; }
+.shader-effect:nth-child(8) { top: 87%; right: 48%; animation-delay: 7s; }
+
+/* Mini robots */
+.mini-robot {
+  position: absolute; width: 12px; height: 16px; background: rgba(13, 110, 253, 0.7);
+  border-radius: 3px; animation: robotWalk 7s ease-in-out infinite;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+.mini-robot:nth-child(1) { top: 19%; left: 24%; animation-delay: 0s; }
+.mini-robot:nth-child(2) { top: 29%; right: 28%; animation-delay: 1s; }
+.mini-robot:nth-child(3) { top: 39%; left: 32%; animation-delay: 2s; }
+.mini-robot:nth-child(4) { top: 49%; right: 36%; animation-delay: 3s; }
+.mini-robot:nth-child(5) { top: 59%; left: 40%; animation-delay: 4s; }
+.mini-robot:nth-child(6) { top: 69%; right: 44%; animation-delay: 5s; }
+.mini-robot:nth-child(7) { top: 79%; left: 48%; animation-delay: 6s; }
+.mini-robot:nth-child(8) { top: 89%; right: 52%; animation-delay: 7s; }
+
+/* Circuit nodes */
+.circuit-node {
+  position: absolute; width: 8px; height: 8px; background: rgba(13, 110, 253, 0.8);
+  border-radius: 50%; animation: nodePulse 4s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.6);
+}
+.circuit-node:nth-child(1) { top: 11%; left: 26%; animation-delay: 0s; }
+.circuit-node:nth-child(2) { top: 21%; right: 30%; animation-delay: 0.5s; }
+.circuit-node:nth-child(3) { top: 31%; left: 34%; animation-delay: 1s; }
+.circuit-node:nth-child(4) { top: 41%; right: 38%; animation-delay: 1.5s; }
+.circuit-node:nth-child(5) { top: 51%; left: 42%; animation-delay: 2s; }
+.circuit-node:nth-child(6) { top: 61%; right: 46%; animation-delay: 2.5s; }
+.circuit-node:nth-child(7) { top: 71%; left: 50%; animation-delay: 3s; }
+.circuit-node:nth-child(8) { top: 81%; right: 54%; animation-delay: 3.5s; }
+
+/* Data streams */
+.data-stream {
+  position: absolute; width: 2px; height: 20px; background: linear-gradient(to bottom, rgba(13, 110, 253, 0.8), transparent);
+  animation: dataFlow 6s linear infinite;
+}
+.data-stream:nth-child(1) { top: 15%; left: 30%; animation-delay: 0s; }
+.data-stream:nth-child(2) { top: 25%; right: 34%; animation-delay: 1s; }
+.data-stream:nth-child(3) { top: 35%; left: 38%; animation-delay: 2s; }
+.data-stream:nth-child(4) { top: 45%; right: 42%; animation-delay: 3s; }
+.data-stream:nth-child(5) { top: 55%; left: 46%; animation-delay: 4s; }
+.data-stream:nth-child(6) { top: 65%; right: 50%; animation-delay: 5s; }
+.data-stream:nth-child(7) { top: 75%; left: 54%; animation-delay: 6s; }
+.data-stream:nth-child(8) { top: 85%; right: 58%; animation-delay: 7s; }
+
+/* ===== SECTION DIVIDERS AND FLOATING CIRCUITS ===== */
+.section-divider {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+  background: linear-gradient(180deg, transparent, rgba(13, 110, 253, 0.05), transparent);
+}
+
+.floating-circuit {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(13, 110, 253, 0.6);
+  border-radius: 50%;
+  animation: circuitFloat 8s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
+}
+
+.floating-circuit:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.floating-circuit:nth-child(2) { top: 40%; right: 15%; animation-delay: 2s; }
+.floating-circuit:nth-child(3) { top: 60%; left: 20%; animation-delay: 4s; }
+.floating-circuit:nth-child(4) { top: 80%; right: 25%; animation-delay: 6s; }
+.floating-circuit:nth-child(5) { top: 30%; left: 30%; animation-delay: 8s; }
+
+/* ===== ADDITIONAL FLOATING ELEMENTS ===== */
+.floating-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(13, 110, 253, 0.4);
+  border-radius: 50%;
+  animation: dotFloat 10s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.3);
+}
+
+.floating-dot:nth-child(1) { top: 18%; left: 45%; animation-delay: 0s; }
+.floating-dot:nth-child(2) { top: 28%; right: 50%; animation-delay: 2s; }
+.floating-dot:nth-child(3) { top: 38%; left: 55%; animation-delay: 4s; }
+.floating-dot:nth-child(4) { top: 48%; right: 60%; animation-delay: 6s; }
+.floating-dot:nth-child(5) { top: 58%; left: 65%; animation-delay: 8s; }
+
+/* Enhanced section animations */
+.section-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.section-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered skill animations */
+.skill-stagger {
+  animation: skillStagger 0.6s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes skillStagger {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== KEYFRAME ANIMATIONS FOR DECORATIVE ELEMENTS ===== */
+@keyframes controllerGlow {
+  0% { box-shadow: 0 0 8px rgba(13, 110, 253, 0.4); transform: scale(1); }
+  100% { box-shadow: 0 0 20px rgba(13, 110, 253, 0.8); transform: scale(1.1); }
+}
+
+@keyframes bracketPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes binaryFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+  50% { transform: translateY(-15px) rotate(180deg); opacity: 1; }
+}
+
+@keyframes gearRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes joystickMove {
+  0%, 100% { transform: translateX(0px) translateY(0px); }
+  25% { transform: translateX(3px) translateY(-3px); }
+  50% { transform: translateX(0px) translateY(-5px); }
+  75% { transform: translateX(-3px) translateY(-3px); }
+}
+
+@keyframes healthPulse {
+  0%, 100% { opacity: 0.6; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.1); }
+}
+
+@keyframes healthFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes shaderGlow {
+  0%, 100% { opacity: 0.5; filter: blur(1px); }
+  50% { opacity: 1; filter: blur(2px); }
+}
+
+@keyframes robotWalk {
+  0%, 100% { transform: translateX(0px) rotate(0deg); }
+  25% { transform: translateX(2px) rotate(5deg); }
+  50% { transform: translateX(4px) rotate(0deg); }
+  75% { transform: translateX(2px) rotate(-5deg); }
+}
+
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); box-shadow: 0 0 10px rgba(13, 110, 253, 0.6); }
+  50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 20px rgba(13, 110, 253, 0.8); }
+}
+
+@keyframes dataFlow {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes circuitFloat {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
+  25% { transform: translateY(-10px) translateX(5px); opacity: 1; }
+  50% { transform: translateY(-5px) translateX(10px); opacity: 0.8; }
+  75% { transform: translateY(-15px) translateX(-5px); opacity: 1; }
+}
+
+@keyframes dotFloat {
+  0%, 100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0.4; }
+  25% { transform: translateY(-8px) translateX(3px) scale(1.2); opacity: 0.8; }
+  50% { transform: translateY(-12px) translateX(6px) scale(1); opacity: 0.6; }
+  75% { transform: translateY(-6px) translateX(-2px) scale(1.1); opacity: 0.9; }
+}
+
+/* Responsive decorative elements */
+@media (max-width: 768px) {
+  .floating-icon {
+    font-size: 1.2rem;
+  }
+  
+  .pixel-decor, .pixel-controller, .code-bracket, .binary-digit, .rotating-gear, 
+  .mini-joystick, .health-bar, .shader-effect, .mini-robot, .circuit-node, .data-stream,
+  .floating-circuit, .floating-dot {
+    transform: scale(0.8);
+  }
+  
+  .circuit-bg::before {
+    background-size: 40px 40px;
+  }
+  
+  .section-divider {
+    height: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .floating-icon {
+    font-size: 1rem;
+  }
+  
+  .pixel-decor, .pixel-controller, .code-bracket, .binary-digit, .rotating-gear, 
+  .mini-joystick, .health-bar, .shader-effect, .mini-robot, .circuit-node, .data-stream,
+  .floating-circuit, .floating-dot {
+    transform: scale(0.6);
+  }
+  
+  .circuit-bg::before {
+    background-size: 30px 30px;
+  }
+  
+  .section-divider {
+    height: 30px;
+  }
+}
+
+
