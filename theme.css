@@ -1,0 +1,247 @@
+.gamedev-portfolio-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+    border-bottom: 2px solid #0ff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-out;
+}
+
+.gamedev-portfolio-hero .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5em;
+    color: #0ff;
+    text-shadow: 0 0 15px #0ff, 0 0 25px #0ff;
+    margin-bottom: 10px;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.gamedev-portfolio-hero .subtitle {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.4em;
+    color: #c0c0c0;
+    margin-top: 10px;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(10, 20, 30, 0.8);
+    border: 1px solid #00f;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 100, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-out;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.8), 0 0 30px rgba(100, 0, 255, 0.6);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #00f;
+}
+
+.project-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #0ff;
+    font-size: 1.8em;
+    padding: 15px;
+    text-shadow: 0 0 8px #0ff;
+}
+
+.project-card p {
+    font-family: 'Roboto', sans-serif;
+    color: #a0ffff;
+    padding: 0 15px 15px;
+    line-height: 1.6;
+}
+
+.project-card .btn {
+    display: block;
+    width: calc(100% - 30px);
+    margin: 0 15px 15px;
+    padding: 12px 0;
+    text-align: center;
+    background: linear-gradient(45deg, #00f, #f0f);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.1em;
+    box-shadow: 0 0 8px rgba(0, 200, 255, 0.7);
+}
+
+.project-card .btn:hover {
+    background: linear-gradient(45deg, #f0f, #00f);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 1);
+}
+
+/* Navbar Styling for active link */
+.navbar .nav-links a.active {
+    color: #0ff;
+    text-shadow: 0 0 8px #0ff, 0 0 15px #0ff;
+    border-bottom: 2px solid #0ff;
+}
+
+/* Global Body and Background */
+body {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* General Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header and Navigation */
+header {
+    background: rgba(10, 10, 20, 0.9);
+    padding: 15px 0;
+    border-bottom: 1px solid #00f;
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8em;
+    color: #0ff;
+    text-decoration: none;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    font-family: 'Exo 2', sans-serif;
+    color: #b0e0e6;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #0ff;
+    text-shadow: 0 0 8px #0ff;
+    border-bottom: 2px solid #0ff;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #0ff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+/* Footer */
+footer {
+    background: rgba(10, 10, 20, 0.9);
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #00f;
+    margin-top: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 20px;
+    }
+
+    .nav-links li {
+        margin: 0 15px;
+    }
+
+    .gamedev-portfolio-hero .section-title {
+        font-size: 2.5em;
+    }
+
+    .gamedev-portfolio-hero .subtitle {
+        font-size: 1.1em;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}

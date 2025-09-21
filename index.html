@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit Malve - Game Developer & Creator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="background-animation"></div>
+    <!-- Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">Mohit Malve</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Mohit Malve</h1>
+                <p>Computer Engineer and Game Developer</p>
+                <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'});">About Me</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                    <div class="grid-item grid-item-image">
+                        <img src="Images/Sticker.png" alt="Mohit Malve's profile sticker" class="about-sticker">
+                    </div>
+                    <div class="grid-item grid-item-who-i-am">
+                        <h3>Who I Am</h3>
+                        <p>Motivated BTech Computer Engineering student passionate about building immersive experiences using programming, design, and art.</p>
+                        <p>Passionate AI/ML enthusiast with strong Python skills, hands-on project experience, and a solid foundation in data science, deep learning, and NLP.</p>
+                    </div>
+                    <div class="grid-item grid-item-education">
+                        <h4>Education</h4>
+                        <p><strong>BTech in Computer Engineering</strong></p>
+                        <p>Vishwakarma Institute of Information Technology - 2026</p>               
+                    </div>
+                    <div class="grid-item grid-item-experience">
+                        <h4>Experience</h4>
+                        <p><strong>Game Developer Intern</strong> | Smart Cookie Rewards</p>
+                        <ul>
+                            <li>Assisted in coding and implementing game features</li>
+                            <li>Fixed bugs and improved UI responsiveness</li>
+                            <li>Collaborated with designers and artists to integrate assets</li>
+                            <li>Refined gameplay mechanics</li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-code"></i>
+                            <span>C</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-code"></i>
+                            <span>C++</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-microsoft"></i>
+                            <span>C#</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-database"></i>
+                            <span>PL/SQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Game Development</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Unity</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-gamepad"></i>
+                            <span>GameMaker</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-cubes"></i>
+                            <span>ProBuilder</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>Asset Integration</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-code"></i>
+                            <span>Gameplay Programming</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-robot"></i>
+                            <span>AI Programming</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-atom"></i>
+                            <span>Physics Simulation</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-window-maximize"></i>
+                            <span>Game UI</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Optimization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Machine Learning/AI</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card">
+                            <i class="fas fa-brain"></i>
+                            <span>Supervised Learning</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-brain"></i>
+                            <span>Unsupervised Learning</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-cogs"></i>
+                            <span>Feature Engineering</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Model Evaluation</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Cross-Validation</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-sliders-h"></i>
+                            <span>Hyperparameter Tuning</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-rocket"></i>
+                            <span>Model Deployment</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Neural Networks</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-image"></i>
+                            <span>Image Classification</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-object-group"></i>
+                            <span>Object Detection</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Transfer Learning</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-language"></i>
+                            <span>NLP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools & Frameworks</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card">
+                            <i class="fas fa-tools"></i>
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-tensorflow"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-brain"></i>
+                            <span>Keras</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-fire"></i>
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-robot"></i>
+                            <span>HuggingFace</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-language"></i>
+                            <span>NLTK</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-brain"></i>
+                            <span>OpenAI API</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-calculator"></i>
+                            <span>NumPy</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-table"></i>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Matplotlib</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-chart-area"></i>
+                            <span>Seaborn</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Pygame</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-gamepad"></i>
+                            <span>SFML</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-cube"></i>
+                            <span>Blender</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Aseprite</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Shader Graph</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-desktop"></i>
+                            <span>OpenGL/DirectX</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Version Control</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mohit Malve. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
