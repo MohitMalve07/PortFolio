@@ -219,6 +219,35 @@ footer {
     box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
 }
 
+/* AI Projects Specific Styling */
+.ai-btn {
+    background: linear-gradient(45deg, #00a86b, #00d4ff);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 216, 107, 0.5);
+}
+
+.ai-btn:hover {
+    background: linear-gradient(45deg, #00d4ff, #00a86b);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 216, 107, 0.8);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
