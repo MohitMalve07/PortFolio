@@ -707,6 +707,7 @@ section {
 .hero button {
     animation: fadeIn 1.5s ease;
     font-size: 1.1rem;
+    margin-top: 15px; /* Add vertical spacing between buttons */
 }
 
 /* About Section */

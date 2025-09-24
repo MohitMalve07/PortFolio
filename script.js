@@ -73,8 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroTagline = document.querySelector('.hero-content p');
     const heroButton1 = document.querySelector('.hero-content button:nth-of-type(1)');
     const heroButton2 = document.querySelector('.hero-content button:nth-of-type(2)');
+    const heroButton3 = document.querySelector('.hero-content button:nth-of-type(3)'); // New button
 
-    if (heroTitle && heroTagline && heroButton1 && heroButton2) {
+    if (heroTitle && heroTagline && heroButton1 && heroButton2 && heroButton3) {
         const heroObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -82,11 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     heroTagline.classList.add('fade-in-up', 'delay-1');
                     heroButton1.classList.add('fade-in-up', 'delay-2');
                     heroButton2.classList.add('fade-in-up', 'delay-3');
+                    heroButton3.classList.add('fade-in-up', 'delay-4'); // Animate new button
                 } else {
                     heroTitle.classList.remove('fade-in-up', 'delay-0');
                     heroTagline.classList.remove('fade-in-up', 'delay-1');
                     heroButton1.classList.remove('fade-in-up', 'delay-2');
                     heroButton2.classList.remove('fade-in-up', 'delay-3');
+                    heroButton3.classList.remove('fade-in-up', 'delay-4'); // Remove animation from new button
                 }
             });
         }, observerOptions);
